@@ -1,4 +1,3 @@
-
 services:
   phpfpm:
     build:
@@ -7,6 +6,8 @@ services:
     container_name: php_fpm
     volumes:
       - ../src/:/var/www/html/
+    depends_on:
+      - database
     networks:
       - app_network
 
